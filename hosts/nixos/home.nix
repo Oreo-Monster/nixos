@@ -4,6 +4,9 @@
   imports = [
     ./../../modules/home-manager/brave.nix
     ./../../modules/home-manager/git.nix
+    ./../../modules/home-manager/nvim.nix
+    ./../../modules/home-manager/kitty.nix
+    ./../../modules/home-manager/packages.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -20,11 +23,7 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = with pkgs; [
-    tree
-  ];
+  nixpkgs.config.allowUnfree = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

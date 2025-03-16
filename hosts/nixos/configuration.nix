@@ -9,6 +9,8 @@
     [
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      ./../../modules/nixos/fonts.nix
+      ./../../modules/nixos/nvidia.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -62,7 +64,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
