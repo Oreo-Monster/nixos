@@ -11,18 +11,18 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs: 
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
-  in
-  {
-
+  in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; }; #Lets us use the inputs in modules
-	modules = [
-	  ./hosts/nixos/configuration.nix
-	];
+      specialArgs = {inherit inputs;}; #Lets us use the inputs in modules
+      modules = [
+        ./hosts/nixos/configuration.nix
+      ];
     };
-
   };
 }

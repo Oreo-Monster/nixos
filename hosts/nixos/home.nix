@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./../../modules/home-manager/brave.nix
     ./../../modules/home-manager/git.nix
@@ -10,6 +12,7 @@
     ./../../modules/home-manager/i3.nix
     ./../../modules/home-manager/tmux.nix
     ./../../modules/home-manager/nushell.nix
+    ./../../modules/home-manager/nixos-rebuild-script.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

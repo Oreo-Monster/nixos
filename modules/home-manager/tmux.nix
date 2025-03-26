@@ -1,5 +1,9 @@
-{ config, pkgs, inputs, ... }:
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   config = {
     programs.tmux = {
       enable = true;
@@ -7,8 +11,8 @@
       sensibleOnTop = true;
       shell = "${pkgs.nushell}/bin/nu";
       plugins = with pkgs.tmuxPlugins; [
-	yank
-	nord
+        yank
+        nord
       ];
       extraConfig = "
 

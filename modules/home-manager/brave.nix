@@ -1,11 +1,15 @@
-{ config, pkgs, inputs, ... }:
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   config = {
     programs.chromium = {
       enable = true;
       package = pkgs.brave;
       extensions = [
-        { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
+        {id = "nngceckbapebfimnlniiiahkandclblb";} # bitwarden
       ];
     };
   };

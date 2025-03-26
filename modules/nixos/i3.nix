@@ -1,15 +1,12 @@
 # This nixos module sets up the xserver for i3+xfce
 # modules/home-manager/i3.nix is a complementry module
 # home manager module configures i3
-
 {
   config,
   pkgs,
   lib,
   ...
-}: 
-
-{
+}: {
   config = {
     environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
     services.xserver = {
