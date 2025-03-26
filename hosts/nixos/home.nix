@@ -7,6 +7,9 @@
     ./../../modules/home-manager/nvim.nix
     ./../../modules/home-manager/kitty.nix
     ./../../modules/home-manager/packages.nix
+    ./../../modules/home-manager/i3.nix
+    ./../../modules/home-manager/tmux.nix
+    ./../../modules/home-manager/nushell.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

@@ -5,6 +5,7 @@
       enable = true;
       font.name = "Hasklug Nerd Font";
       themeFile = "Nord";
+
     };
   };
 }

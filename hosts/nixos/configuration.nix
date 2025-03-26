@@ -11,6 +11,7 @@
       inputs.home-manager.nixosModules.default
       ./../../modules/nixos/fonts.nix
       ./../../modules/nixos/nvidia.nix
+      ./../../modules/nixos/i3.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -47,13 +48,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -87,9 +81,7 @@
     isNormalUser = true;
     description = "eda";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+    shell = pkgs.nushell;
   };
 
   home-manager = {
