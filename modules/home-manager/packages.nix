@@ -9,8 +9,11 @@
       #CLI Tools
       tree
       gitui
+      cargo
+      rustc
 
       obsidian
+      discord
     ];
   };
 }

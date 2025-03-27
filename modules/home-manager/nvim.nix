@@ -72,6 +72,15 @@
           ];
         };
 
+        lsp = {
+          enable = true;
+          inlayHints = true;
+          servers = {
+            rust-analyzer.enable = true;
+            nixd.enable = true;
+          };
+        };
+
         telescope = {
           enable = true;
           keymaps = {
