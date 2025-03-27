@@ -26,10 +26,28 @@
       };
       colorschemes.nord.enable = true;
 
+      #############################################
+      # Key Bindings                              #
+      #############################################
+
+      keymaps = [
+        {
+          mode = "v";
+          key = "J";
+          action = ":m '>+1<CR>gv=gv";
+        }
+        {
+          mode = "v";
+          key = "K";
+          action = ":m '<-2<CR>gv=gv";
+        }
+      ];
+
       plugins = {
         auto-save.enable = true;
         web-devicons.enable = true;
         vim-css-color.enable = true;
+        tmux-navigator.enable = true;
 
         treesitter = {
           enable = true;
