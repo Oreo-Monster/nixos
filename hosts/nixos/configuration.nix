@@ -13,13 +13,10 @@
     ./../../modules/nixos/fonts.nix
     ./../../modules/nixos/nvidia.nix
     ./../../modules/nixos/i3.nix
+    ./../../modules/nixos/duel-boot.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-72f3d4c9-b65c-4868-bbf3-c19149021d6d".device = "/dev/disk/by-uuid/72f3d4c9-b65c-4868-bbf3-c19149021d6d";
   networking.hostName = "nixos"; # Define your hostname.

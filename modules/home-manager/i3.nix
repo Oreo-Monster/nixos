@@ -12,6 +12,7 @@ in {
     xsession.windowManager.i3 = {
       enable = true;
       config = {
+        defaultWorkspace = "workspace number 1";
         focus = {
           mouseWarping = true;
           followMouse = true;
@@ -80,6 +81,7 @@ in {
       };
     };
 
+    #Thank you u/CodeBreaker93 for your 3 year old reddit comment with this script
     home.file.".config/i3/scripts/move-cursor-to-focused" = {
       source = pkgs.writeScript "move-cursor-to-focused" ''
                #!/bin/sh
@@ -94,7 +96,6 @@ in {
     };
 
     home.packages = with pkgs; [
-      jq
       xdotool
     ];
   };
