@@ -23,10 +23,10 @@ in {
           "${modifier}+Shift+q" = "kill";
           "${modifier}+Shift+Return" = "exec rofi -show drun";
           # Focus Movement
-          "${modifier}+k" = "focus up";
-          "${modifier}+j" = "focus down";
-          "${modifier}+h" = "focus left";
-          "${modifier}+l" = "focus right";
+          "${modifier}+k" = "focus up ; exec --no-startup-id ~/.config/i3/scripts/move-cursor-to-focused";
+          "${modifier}+j" = "focus down ; exec --no-startup-id ~/.config/i3/scripts/move-cursor-to-focused";
+          "${modifier}+h" = "focus left ; exec --no-startup-id ~/.config/i3/scripts/move-cursor-to-focused";
+          "${modifier}+l" = "focus right ; exec --no-startup-id ~/.config/i3/scripts/move-cursor-to-focused";
           "${modifier}+0" = "workspace number 10";
           "${modifier}+1" = "workspace number 1";
           "${modifier}+2" = "workspace number 2";
@@ -78,6 +78,14 @@ in {
           size = 14.0;
         };
       };
+    };
+
+    home.file.".config/i3/scripts/move-cursor-to-focused" = {
+      source = pkgs.writeScript "move-cursor-to-focused" ''
+        #!/bin/sh
+        window_id=$(i3-msg -t get_tree | jq -r '.. | select(.focused? == true) | .id')
+        xdotool mousemove --window $window_id 50% 50%
+      '';
     };
   };
 }
