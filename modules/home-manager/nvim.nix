@@ -76,7 +76,7 @@
           enable = true;
           inlayHints = true;
           servers = {
-            rust-analyzer.enable = true;
+            rust_analyzer.enable = true;
             nixd.enable = true;
           };
         };
