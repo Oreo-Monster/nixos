@@ -87,5 +87,10 @@ in {
         xdotool mousemove --window $window_id 50% 50%
       '';
     };
+
+    home.packages = with pkgs; [
+      jq
+      xdotool
+    ];
   };
 }
