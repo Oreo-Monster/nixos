@@ -31,7 +31,7 @@
 
       echo -e "Rebuilding nixos..."
       sudo nixos-rebuild switch --flake ~/nixos
-      current=$(nixos-rebuild list-generations | head -n 1)
+      current=$(nixos-rebuild list-generations | grep current | sed 's/\([0-9]\+\) *current *\([0-9-]\+ [0-9:]\+\).*/Generation \1 Built at \2/' -)
 
       echo -e "Commiting changes..."
       git commit -am "$current"
