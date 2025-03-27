@@ -12,6 +12,11 @@ in {
     xsession.windowManager.i3 = {
       enable = true;
       config = {
+        focus = {
+          mouseWarping = true;
+          followMouse = true;
+        };
+
         modifier = modifier;
         keybindings = {
           # App Controll
