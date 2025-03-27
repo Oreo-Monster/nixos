@@ -76,7 +76,12 @@
           enable = true;
           inlayHints = true;
           servers = {
-            rust_analyzer.enable = true;
+            rust_analyzer = {
+              enable = true;
+              #Make sure to install Cargo and Rustc elsewhere
+              installCargo = false;
+              installRustc = false;
+            };
             nixd.enable = true;
           };
         };
