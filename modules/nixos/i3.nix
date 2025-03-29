@@ -20,7 +20,7 @@
           enableXfwm = false;
         };
         wallpaper = {
-          combineScreens = false;
+          combineScreens = true;
           mode = "fill";
         };
       };
