@@ -23,9 +23,9 @@ in {
           # App Controll
           "${modifier}+Shift+q" = "kill";
           "${modifier}+Shift+Return" = "exec --no-startup-id rofi -show drun";
-          "${modifier}+Return" = "exed --no-startup-id kitty";
-          "${modifier}+b" = "exed --no-startup-id brave";
-          "${modifier}+o" = "exed --no-startup-id obsidian";
+          "${modifier}+Return" = "exec --no-startup-id kitty";
+          "${modifier}+b" = "exec --no-startup-id brave";
+          "${modifier}+o" = "exec --no-startup-id obsidian";
           # Focus Movement
           "${modifier}+k" = "focus up ; exec --no-startup-id ~/.config/i3/scripts/move-cursor-to-focused";
           "${modifier}+j" = "focus down ; exec --no-startup-id ~/.config/i3/scripts/move-cursor-to-focused";
