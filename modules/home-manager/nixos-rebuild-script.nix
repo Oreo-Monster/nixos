@@ -1,9 +1,24 @@
-{pkgs, ...}: {
-  options = {};
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.rebuild;
+in {
+  options = {
+    rebuild.enable = lib.mkEnableOption "adds rebuild script to path";
+    rebuild.command = lib.mkOption {
+      type = lib.types.str;
+      default = "sudo nixos-rebuild switch --flake ~/nixos";
+      description = "Command for rebuilding flake";
+    };
+  };
 
   config = let
     #Script taken from noboilerplate https://github.com/0atman/noboilerplate/blob/main/scripts/38-nixos.md
     rebuildScript = pkgs.writeShellScriptBin "rebuild" ''
+      #!/bin/sh
       set -e #exit on an error
       pushd ~/nixos
 
@@ -30,7 +45,7 @@
 
 
       echo -e "Rebuilding nixos..."
-      sudo nixos-rebuild switch --flake ~/nixos
+      ${cfg.command}
       current=$(nixos-rebuild list-generations | grep current | sed 's/\([0-9]\+\) *current *\([0-9-]\+ [0-9:]\+\).*/Generation \1 Built at \2/' -)
 
       echo -e "Commiting changes..."
@@ -39,9 +54,10 @@
 
       popd
     '';
-  in {
-    home.packages = [
-      rebuildScript
-    ];
-  };
+  in
+    lib.mkIf cfg.enable {
+      home.packages = [
+        rebuildScript
+      ];
+    };
 }

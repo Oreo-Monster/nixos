@@ -1,13 +1,45 @@
 {
-  config,
   pkgs,
+  config,
   inputs,
+  lib,
   ...
-}: {
+}: let
+  cfg = config.nvim;
+in {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
   ];
-  config = {
+
+  options = {
+    nvim.enable = lib.mkEnableOption "Enable nixvim";
+
+    nvim.treesitter-grammers = lib.mkOption {
+      type = lib.types.listOf lib.types.package;
+      default = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        bash
+        json
+        lua
+        make
+        markdown
+        nix
+        regex
+        toml
+        vim
+        xml
+        yaml
+        nu
+        php
+        rust
+        vue
+        html
+        css
+      ];
+    };
+    description = "List of treesitter grammars to be installed";
+  };
+
+  config = lib.mkIf cfg.enable {
     programs.nixvim = {
       enable = true;
       defaultEditor = true;
@@ -51,25 +83,7 @@
 
         treesitter = {
           enable = true;
-          grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-            bash
-            json
-            lua
-            make
-            markdown
-            nix
-            regex
-            toml
-            vim
-            xml
-            yaml
-            nu
-            php
-            rust
-            vue
-            html
-            css
-          ];
+          grammarPackages = cfg.treesitter-grammers;
         };
 
         lsp = {

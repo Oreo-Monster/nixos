@@ -1,10 +1,14 @@
 {
   config,
-  pkgs,
-  inputs,
+  lib,
   ...
-}: {
-  config = {
+}: let
+  cfg = config.nushell;
+in {
+  options = {
+    nushell.enable = lib.mkEnableOption "enables nushell";
+  };
+  config = lib.mkIf cfg.enable {
     programs = {
       nushell = {
         enable = true;

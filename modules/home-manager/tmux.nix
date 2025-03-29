@@ -1,20 +1,26 @@
 {
   config,
   pkgs,
-  inputs,
+  lib,
   ...
-}: {
-  config = {
-    programs.tmux = {
-      enable = true;
-      keyMode = "vi";
-      sensibleOnTop = true;
-      shell = "${pkgs.nushell}/bin/nu";
-      plugins = with pkgs.tmuxPlugins; [
-        yank
-        nord
-      ];
-      extraConfig = "
+}: let
+  cfg = config.tmux;
+in {
+  options = {
+    tmux.enable = lib.mkEnableOption "enables tmux";
+  };
+  config =
+    lib.mkIf cfg.enable {
+      programs.tmux = {
+        enable = true;
+        keyMode = "vi";
+        sensibleOnTop = true;
+        shell = "${pkgs.nushell}/bin/nu";
+        plugins = with pkgs.tmuxPlugins; [
+          yank
+          nord
+        ];
+        extraConfig = "
 
 unbind-key C-b
 set-option -g prefix C-Space
@@ -58,6 +64,6 @@ bind-key -T copy-mode-vi 'C-\\' select-pane -l
 
 
       ";
+      };
     };
-  };
 }

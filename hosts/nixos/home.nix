@@ -4,21 +4,14 @@
   ...
 }: {
   imports = [
-    ./../../modules/home-manager/brave.nix
-    ./../../modules/home-manager/git.nix
-    ./../../modules/home-manager/nvim.nix
-    ./../../modules/home-manager/kitty.nix
-    ./../../modules/home-manager/packages.nix
-    ./../../modules/home-manager/i3.nix
-    ./../../modules/home-manager/tmux.nix
-    ./../../modules/home-manager/nushell.nix
-    ./../../modules/home-manager/nixos-rebuild-script.nix
     ./../../modules/home-manager/modules.nix
   ];
   # Custom Modules
   desktop-background = {
     enable = true;
   };
+  packages.enable = true;
+  i3.enable = true;
 
   home.username = "eda";
   home.homeDirectory = "/home/eda";

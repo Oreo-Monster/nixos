@@ -7,8 +7,12 @@
   ...
 }: let
   modifier = "Mod1";
+  cfg = config.i3;
 in {
-  config = {
+  options = {
+    i3.enable = lib.mkEnableOption "enables i3 config";
+  };
+  config = lib.mkIf cfg.enable {
     xsession.windowManager.i3 = {
       enable = true;
       config = {
