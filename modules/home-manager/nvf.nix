@@ -25,7 +25,7 @@ in {
         };
 
         vim.options = {
-          shiftwidht = 2;
+          shiftwidth = 2;
         };
 
         vim.keymaps = [
