@@ -24,6 +24,10 @@ in {
           mapleader = " ";
         };
 
+        vim.options = {
+          shiftwidht = 2;
+        };
+
         vim.keymaps = [
           {
             mode = "v";
@@ -62,7 +66,6 @@ in {
 
         vim.languages = {
           enableTreesitter = true;
-          enableFormat = true;
           enableLSP = true;
 
           nix.enable = true;
