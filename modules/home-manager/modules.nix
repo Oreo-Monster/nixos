@@ -10,11 +10,12 @@
     ./tmux.nix
     ./nushell.nix
     ./nixos-rebuild-script.nix
+    ./nvf.nix
   ];
 
   brave.enable = lib.mkDefault true;
   git.enable = lib.mkDefault true;
-  nvim.enable = lib.mkDefault true;
+  nvf.enable = lib.mkDefault true;
   kitty.enable = lib.mkDefault true;
   tmux.enable = lib.mkDefault true;
   nushell.enable = lib.mkDefault true;
