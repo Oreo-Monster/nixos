@@ -40,6 +40,35 @@ in {
             key = "K";
             action = ":m '<-2<CR>gv=gv";
           }
+          {
+            mode = "n";
+            key = "<leader>u";
+            action = "vim.cmd.UndotreeToggle";
+          }
+          {
+            mode = "";
+            key = "<c-k>";
+            action = "vim.cmd.wincmd k<CR>";
+            silent = true;
+          }
+          {
+            mode = "";
+            key = "<c-j>";
+            action = "vim.cmd.wincmd j<CR>";
+            silent = true;
+          }
+          {
+            mode = "";
+            key = "<c-h>";
+            action = "vim.cmd.wincmd h<CR>";
+            silent = true;
+          }
+          {
+            mode = "";
+            key = "<c-l>";
+            action = "vim.cmd.wincmd l<CR>";
+            silent = true;
+          }
         ];
 
         vim.theme = {
