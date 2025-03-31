@@ -48,25 +48,25 @@ in {
           {
             mode = "";
             key = "<c-k>";
-            action = "vim.cmd.wincmd k<CR>";
+            action = "vim.cmd.wincmd k";
             silent = true;
           }
           {
             mode = "";
             key = "<c-j>";
-            action = "vim.cmd.wincmd j<CR>";
+            action = "vim.cmd.wincmd j";
             silent = true;
           }
           {
             mode = "";
             key = "<c-h>";
-            action = "vim.cmd.wincmd h<CR>";
+            action = "vim.cmd.wincmd h";
             silent = true;
           }
           {
             mode = "";
             key = "<c-l>";
-            action = "vim.cmd.wincmd l<CR>";
+            action = "vim.cmd.wincmd l";
             silent = true;
           }
         ];
