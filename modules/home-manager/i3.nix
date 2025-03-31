@@ -45,6 +45,7 @@ in {
           "${modifier}+7" = "workspace number 7";
           "${modifier}+8" = "workspace number 8";
           "${modifier}+9" = "workspace number 9";
+          "${modifier}+Tab" = "move workspace to output next";
           # Container movement
           "${modifier}+Shift+k" = "move up";
           "${modifier}+Shift+j" = "move down";

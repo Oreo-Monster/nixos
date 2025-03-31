@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  pkgs,
   ...
 }: let
   cfg = config.nvf;
@@ -70,6 +71,26 @@ in {
 
           nix.enable = true;
           rust.enable = true;
+        };
+
+        vim.lazy.plugins = {
+          undotree = {
+            package = pkgs.vimPlugins.undotree;
+            lazy = true;
+            cmd = ["UndotreeToggle"];
+            keys = [
+              {
+                mode = "n";
+                key = "<leader>u";
+                action = "vim.cmd.UndotreeToggle";
+              }
+            ];
+          };
+        };
+        vim.extraPlugins = {
+          tmux-navigator = {
+            package = pkgs.vimPlugins.vim-tmux-navigator;
+          };
         };
       };
     };
