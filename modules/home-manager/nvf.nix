@@ -57,12 +57,12 @@ in {
           }
           {
             mode = "n";
-            key = "<leader>wh";
+            key = "<C-h>";
             action = ":wincmd h<CR>";
           }
           {
             mode = "n";
-            key = "<leader>wl";
+            key = "<C-a>";
             action = ":wincmd l<CR>";
           }
         ];
