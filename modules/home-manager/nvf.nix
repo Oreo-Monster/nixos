@@ -47,22 +47,22 @@ in {
           }
           {
             mode = ["n" "v" "c" "i"];
-            key = "<c-k>";
+            key = "<C-k>";
             action = ":wincmd k<CR>";
           }
           {
             mode = ["n" "v" "c" "i"];
-            key = "<c-j>";
+            key = "<C-j>";
             action = ":wincmd j<CR>";
           }
           {
             mode = ["n" "v" "c" "i"];
-            key = "<c-h>";
+            key = "<C-h>";
             action = ":wincmd h<CR>";
           }
           {
             mode = ["n" "v" "c" "i"];
-            key = "<c-l>";
+            key = "<C-l>";
             action = ":wincmd l<CR>";
           }
         ];
