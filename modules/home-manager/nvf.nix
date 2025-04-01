@@ -46,23 +46,23 @@ in {
             action = "vim.cmd.UndotreeToggle";
           }
           {
-            mode = ["n" "v" "c" "i"];
-            key = "<C-k>";
+            mode = "n";
+            key = "<leader>wk";
             action = ":wincmd k<CR>";
           }
           {
-            mode = ["n" "v" "c" "i"];
-            key = "<C-j>";
+            mode = "n";
+            key = "<leader>wj";
             action = ":wincmd j<CR>";
           }
           {
-            mode = ["n" "v" "c" "i"];
-            key = "<C-h>";
+            mode = "n";
+            key = "<leader>wh";
             action = ":wincmd h<CR>";
           }
           {
-            mode = ["n" "v" "c" "i"];
-            key = "<C-l>";
+            mode = "n";
+            key = "<leader>wl";
             action = ":wincmd l<CR>";
           }
         ];
