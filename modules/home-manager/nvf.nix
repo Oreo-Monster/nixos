@@ -47,23 +47,22 @@ in {
           }
           {
             mode = "n";
-            key = "<leader>wk";
+            key = "<C-k>";
             action = ":wincmd k<CR>";
           }
           {
             mode = "n";
-            key = "<leader>wj";
+            key = "<C-j>";
             action = ":wincmd j<CR>";
           }
           {
             mode = "n";
             key = "<C-h>";
             action = ":wincmd h<CR>";
-            noremap = false;
           }
           {
             mode = "n";
-            key = "<C-a>";
+            key = "<C-l>";
             action = ":wincmd l<CR>";
           }
         ];
