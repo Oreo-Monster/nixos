@@ -59,6 +59,7 @@ in {
             mode = "n";
             key = "<C-h>";
             action = ":wincmd h<CR>";
+            noremap = false;
           }
           {
             mode = "n";
@@ -115,6 +116,9 @@ in {
         vim.extraPlugins = {
           tmux-navigator = {
             package = pkgs.vimPlugins.vim-tmux-navigator;
+          };
+          auto-save-nvim = {
+            package = pkgs.vimPlugins.auto-save-nvim;
           };
         };
       };
