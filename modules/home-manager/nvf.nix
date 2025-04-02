@@ -45,26 +45,6 @@ in {
             key = "<leader>u";
             action = "vim.cmd.UndotreeToggle";
           }
-          {
-            mode = "n";
-            key = "<C-k>";
-            action = ":wincmd k<CR>";
-          }
-          {
-            mode = "n";
-            key = "<C-j>";
-            action = ":wincmd j<CR>";
-          }
-          {
-            mode = "n";
-            key = "<C-h>";
-            action = ":wincmd h<CR>";
-          }
-          {
-            mode = "n";
-            key = "<C-l>";
-            action = ":wincmd l<CR>";
-          }
         ];
 
         vim.theme = {
