@@ -44,6 +44,7 @@ in {
             mode = "n";
             key = "<leader>u";
             action = "vim.cmd.UndotreeToggle";
+            noremap = false;
           }
         ];
 
@@ -74,6 +75,8 @@ in {
           rust.enable = true;
         };
 
+        vim.filetree.neo-tree.enable = true;
+
         vim.lazy.plugins = {
           undotree = {
             package = pkgs.vimPlugins.undotree;
@@ -89,9 +92,6 @@ in {
           };
         };
         vim.extraPlugins = {
-          tmux-navigator = {
-            package = pkgs.vimPlugins.vim-tmux-navigator;
-          };
           auto-save-nvim = {
             package = pkgs.vimPlugins.auto-save-nvim;
           };
