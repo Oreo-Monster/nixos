@@ -29,6 +29,15 @@ in {
           shiftwidth = 2;
         };
 
+        vim.theme = {
+          enable = true;
+          name = "nord";
+        };
+
+        #############################################
+        # Key Bindings                              #
+        #############################################
+
         vim.keymaps = [
           {
             mode = "v";
@@ -48,10 +57,21 @@ in {
           }
         ];
 
-        vim.theme = {
-          enable = true;
-          name = "nord";
+        #############################################
+        # Language Settings                         #
+        #############################################
+
+        vim.languages = {
+          enableTreesitter = true;
+          enableLSP = true;
+
+          nix.enable = true;
+          rust.enable = true;
         };
+
+        #############################################
+        # Packages                                  #
+        #############################################
 
         vim.telescope = {
           enable = true;
@@ -65,14 +85,6 @@ in {
               "vendor/(?!wright)"
             ];
           };
-        };
-
-        vim.languages = {
-          enableTreesitter = true;
-          enableLSP = true;
-
-          nix.enable = true;
-          rust.enable = true;
         };
 
         vim.filetree.neo-tree.enable = true;
@@ -91,7 +103,11 @@ in {
             ];
           };
         };
+
         vim.extraPlugins = {
+          tmux-navigator = {
+            package = pkgs.vimPlugins.vim-tmux-navigator;
+          };
           auto-save-nvim = {
             package = pkgs.vimPlugins.auto-save-nvim;
           };
