@@ -66,10 +66,6 @@ in {
           };
         };
 
-        vim.filetree.neo-tree = {
-          enable = true;
-        };
-
         vim.languages = {
           enableTreesitter = true;
           enableLSP = true;
