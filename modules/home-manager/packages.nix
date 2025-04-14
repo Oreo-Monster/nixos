@@ -20,6 +20,7 @@ in {
       #Desktop apps
       obsidian
       discord
+      calibre
     ];
   };
 }

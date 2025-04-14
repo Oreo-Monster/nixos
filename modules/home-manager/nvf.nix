@@ -10,7 +10,7 @@ in {
   imports = [inputs.nvf.homeManagerModules.default];
 
   options = {
-    nvf.enable = lib.mkEnableOption "Enable git with user name and email";
+    nvf.enable = lib.mkEnableOption "Enable nvim configured with NVF";
   };
 
   config = lib.mkIf cfg.enable {
