@@ -21,6 +21,7 @@ in {
       obsidian
       discord
       calibre
+      steam
     ];
   };
 }
