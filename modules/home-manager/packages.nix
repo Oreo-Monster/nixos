@@ -22,6 +22,7 @@ in {
       discord
       calibre
       steam
+      inkscape
     ];
   };
 }
