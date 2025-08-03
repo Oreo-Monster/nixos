@@ -16,6 +16,8 @@ in {
       gitui
       cargo
       rustc
+      #Heaven
+      claude-code
 
       #Desktop apps
       obsidian
