@@ -14,6 +14,7 @@
     ./../../modules/nixos/nvidia.nix
     ./../../modules/nixos/i3.nix
     ./../../modules/nixos/duel-boot.nix
+    ./../../modules/nixos/claude-code.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -101,7 +102,6 @@
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     git
-    cachix
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
